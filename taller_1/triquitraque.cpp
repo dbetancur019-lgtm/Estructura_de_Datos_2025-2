@@ -6,6 +6,31 @@ using namespace std;
 char t[9] = {' ',' ',' ',' ',' ',' ',' ',' ',' '};
 bool turno;
 
+
+void jugadaJugador() {
+    int p;
+    while(true) {
+        cout <<"Tu turno (1-9):";
+        cin >> p;
+        if(p >=1&& p <=9&& t[p-1] ==' ') {
+            t[p-1] ='X';
+            break;
+        }
+    }
+}
+
+void jugadaPC() {
+    int p;
+    while(true) {
+        p =rand() %9;
+        if(t[p] ==' ') {
+            t[p] ='O';
+            cout <<"La computadora eligio la posicion "<< p+1<<"\n";
+            break;
+        }
+    }
+}
+
 int main() {
     srand(time(0));
     cout <<"Bienvenido a Triqui\n";
@@ -22,3 +47,4 @@ int main() {
         turno = true;
     }
 }
+
